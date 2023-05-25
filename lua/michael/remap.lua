@@ -28,8 +28,14 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 
+vim.keymap.set("n", "Q", "<nop>")
+
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
-
+-- Alt+[hjkl] to navigate through splits in terminal mode
+-- vim.keymap.set("n", "<M-h>", "<C-\\><C-n><C-w>h")
+-- vim.keymap.set("n", "<M-j>", "<C-\\><C-n><C-w>j")
+-- vim.keymap.set("n", "<M-k>", "<C-\\><C-n><C-w>k")
+-- vim.keymap.set("n", "<M-l>", "<C-\\><C-n><C-w>l")
