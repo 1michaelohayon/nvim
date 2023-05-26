@@ -13,8 +13,9 @@ return require('packer').startup(function(use)
 	requires = { {'nvim-lua/plenary.nvim'} }
 }
 ---------------
-use({ 'rose-pine/neovim', as = 'rose-pine' })
-vim.cmd('colorscheme rose-pine')
+use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
+vim.cmd('colorscheme codeschool')
+
 
 ---------------
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -52,6 +53,10 @@ use('tpope/vim-fugitive')
   }
 
 ---------------
+use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 ---------------
 ---------------
 end)
