@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["codeschool.nvim"] = {
-    loaded = true,
-    path = "/home/michael/.local/share/nvim/site/pack/packer/start/codeschool.nvim",
-    url = "https://github.com/adisen99/codeschool.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -118,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/michael/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,

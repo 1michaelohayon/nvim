@@ -13,8 +13,8 @@ return require('packer').startup(function(use)
 	requires = { {'nvim-lua/plenary.nvim'} }
 }
 ---------------
-use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
-vim.cmd('colorscheme codeschool')
+use {"rebelot/kanagawa.nvim", requires = {"rktjmp/lush.nvim"}}
+vim.cmd('colorscheme kanagawa-dragon')
 
 
 ---------------
