@@ -14,8 +14,6 @@ return require('packer').startup(function(use)
 }
 ---------------
 use {"rebelot/kanagawa.nvim", requires = {"rktjmp/lush.nvim"}}
-vim.cmd('colorscheme kanagawa-dragon')
-
 
 ---------------
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -57,6 +55,9 @@ use {
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 }
+---------------
+---------------
+use 'nvim-tree/nvim-web-devicons'
 ---------------
 ---------------
 end)
