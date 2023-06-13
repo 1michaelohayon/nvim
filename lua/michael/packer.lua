@@ -69,8 +69,6 @@ use 'norcalli/nvim-colorizer.lua'
 ---------------
 use 'windwp/nvim-ts-autotag'
 ---------------
-use 'github/copilot.vim'
----------------
 ---------------
 end)
 -- run :so% then :PackerSync
