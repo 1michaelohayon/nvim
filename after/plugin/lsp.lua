@@ -54,7 +54,6 @@ lsp.format_on_save({
   servers = {
     ['lua_ls'] = {'lua'},
     ['gopls'] = {'go'},
-    ['rust_analyzer'] = {'rust'},
   }
 })
 

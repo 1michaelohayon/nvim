@@ -6,7 +6,9 @@ require'nvim-treesitter.configs'.setup {
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
 
-
+  autotag = { -- html auto tag
+    enable = true,
+  },
  highlight = {
     enable = true,
 

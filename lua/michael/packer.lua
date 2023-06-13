@@ -14,7 +14,13 @@ return require('packer').startup(function(use)
 }
 ---------------
 use "rebelot/kanagawa.nvim"
+use {
+    "phha/zenburn.nvim",
+    config = function() require("zenburn").setup() end
+}
+use({ 'rose-pine/neovim', as = 'rose-pine' })
 
+vim.cmd('colorscheme rose-pine')
 ---------------
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -58,6 +64,12 @@ use {
 ---------------
 ---------------
 use 'nvim-tree/nvim-web-devicons'
+---------------
+use 'norcalli/nvim-colorizer.lua'
+---------------
+use 'windwp/nvim-ts-autotag'
+---------------
+use 'github/copilot.vim'
 ---------------
 ---------------
 end)
