@@ -15,7 +15,27 @@ local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+          mapping = {
+    ['<Tab>'] = cmp.mapping.confirm({select = true}),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<M-k>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+    ['<M-j>'] = cmp.mapping.select_next_item(cmp_select_opts),
+    ['<C-p>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item(cmp_select_opts)
+      else
+        cmp.complete()
+      end
+    end),
+    ['<C-n>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item(cmp_select_opts)
+      else
+        cmp.complete()
+      end
+    end),
+  }
 })
 
 lsp.set_preferences({
@@ -37,7 +57,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "<F4>", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+    --  vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
   
