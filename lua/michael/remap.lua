@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 --vim.keymap.set("n", "<leader>ee", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ee", vim.cmd.Oil)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
@@ -11,6 +12,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<n>", "<nzzzv")
 vim.keymap.set("n", "<N>", "<Nzzzv")
 
+
+-- save
+vim.api.nvim_set_keymap('n', '<c-s>', ':w<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<c-s>', '<c-o>:w<CR>', {noremap = true, silent = true})
 
 -- leader + p doesn't overrite the current clipboard
 vim.keymap.set("x", "<leader>p", "\"_dP")

@@ -15,27 +15,8 @@ local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 lsp.setup_nvim_cmp({
-          mapping = {
-    ['<Tab>'] = cmp.mapping.confirm({select = true}),
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
-    ['<M-k>'] = cmp.mapping.select_prev_item(cmp_select_opts),
-    ['<M-j>'] = cmp.mapping.select_next_item(cmp_select_opts),
-    ['<C-p>'] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item(cmp_select_opts)
-      else
-        cmp.complete()
-      end
-    end),
-    ['<C-n>'] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_next_item(cmp_select_opts)
-      else
-        cmp.complete()
-      end
-    end),
-  }
+  mapping = cmp_mappings
+
 })
 
 lsp.set_preferences({

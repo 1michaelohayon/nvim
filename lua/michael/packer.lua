@@ -6,9 +6,10 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-
+    ---- 
+    ---
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     ---------------
@@ -72,11 +73,27 @@ return require('packer').startup(function(use)
     require('neoscroll').setup()
     ---------------
     ---------------
+    use 'stevearc/oil.nvim'
     ---------------
-    use 'echasnovski/mini.files'
+    ---------------
+    ---------------
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {}
+        end
+    })
 
     ---------------
     ---------------
----------------
+    ---------------
+    use("gbprod/yanky.nvim")
+    ---------------
+    ---------------
+    ---------------
 
 end)
+
+
+
+
