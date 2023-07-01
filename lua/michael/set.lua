@@ -36,3 +36,8 @@ vim.opt.isfname:append("@-@")
 -- vim.opt.colorcolumn = "80"
 
 
+--go?
+-- vim.opt.list = true
+-- vim.opt.listchars["tab"] = " "
+
+
