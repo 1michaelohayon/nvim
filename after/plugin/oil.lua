@@ -2,7 +2,7 @@ require("oil").setup({
   keymaps = {
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
-    ["<C-s>"] = "actions.select_vsplit",
+    ["<C-S>"] = "actions.select_vsplit",
     ["<C-h>"] = "actions.select_split",
     ["<C-t>"] = "actions.select_tab",
     ["<C-e>"] = "actions.preview",

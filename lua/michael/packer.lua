@@ -12,12 +12,9 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
     ---------------
     use "rebelot/kanagawa.nvim"
-    use {
-        "phha/zenburn.nvim",
-        config = function() require("zenburn").setup() end
-    }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     ---------------
@@ -90,6 +87,8 @@ return require('packer').startup(function(use)
     use("gbprod/yanky.nvim")
     ---------------
     ---------------
+    use { "zbirenbaum/copilot.lua" }
+
     ---------------
 
 end)
