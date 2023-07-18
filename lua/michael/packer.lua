@@ -70,9 +70,6 @@ return require('packer').startup(function(use)
     require('neoscroll').setup()
     ---------------
     ---------------
-    use 'stevearc/oil.nvim'
-    ---------------
-    ---------------
     ---------------
     use({
         "folke/trouble.nvim",
@@ -88,6 +85,25 @@ return require('packer').startup(function(use)
     ---------------
     ---------------
     use { "zbirenbaum/copilot.lua" }
+
+    ---------------
+    ---------------
+    ---------------
+use {
+    "nvim-tree/nvim-tree.lua",
+    requires = "kyazdani42/nvim-web-devicons" ,
+    wants = "nvim-web-devicons",
+    config = function()
+      require("nvim-web-devicons").setup()
+
+      require("nvim-tree").setup {
+        hijack_cursor = true,
+        view = {
+          width = 30
+        }
+      }
+    end
+  }
 
     ---------------
 

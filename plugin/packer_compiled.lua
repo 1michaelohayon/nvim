@@ -165,6 +165,13 @@ _G.packer_plugins = {
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\2‹\1\0\0\3\0\a\0\0146\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\1\3\0B\0\2\0029\0\2\0005\1\4\0005\2\5\0=\2\6\1B\0\2\1K\0\1\0\tview\1\0\1\nwidth\3\30\1\0\1\18hijack_cursor\2\14nvim-tree\nsetup\22nvim-web-devicons\frequire\0" },
+    loaded = true,
+    path = "/home/michael/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua",
+    wants = { "nvim-web-devicons" }
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -179,11 +186,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
-  },
-  ["oil.nvim"] = {
-    loaded = true,
-    path = "/home/michael/.local/share/nvim/site/pack/packer/start/oil.nvim",
-    url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -234,14 +236,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\2‹\1\0\0\3\0\a\0\0146\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\1\3\0B\0\2\0029\0\2\0005\1\4\0005\2\5\0=\2\6\1B\0\2\1K\0\1\0\tview\1\0\1\nwidth\3\30\1\0\1\18hijack_cursor\2\14nvim-tree\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
