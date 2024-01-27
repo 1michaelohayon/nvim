@@ -1,3 +1,4 @@
+vim.o.mouse = "a"
 
 
 -- vim.opt.nu = true

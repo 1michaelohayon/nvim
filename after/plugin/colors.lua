@@ -31,8 +31,8 @@ local command = "gsettings get org.gnome.desktop.interface gtk-theme"
 local output = executeCommand(command)
 
 if output:find("dark") then
-ColorMyPencils()
+ColorMyPencils() -- dark
 else
-ColorMyPencils("kanagawa-lotus")
+ColorMyPencils() -- light
 end
 

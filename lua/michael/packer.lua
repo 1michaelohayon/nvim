@@ -18,7 +18,13 @@ return require('packer').startup(function(use)
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     ---------------
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 
     use('nvim-treesitter/playground')
 
@@ -70,6 +76,9 @@ return require('packer').startup(function(use)
     require('neoscroll').setup()
     ---------------
     ---------------
+    use 'stevearc/oil.nvim'
+    ---------------
+    ---------------
     ---------------
     use({
         "folke/trouble.nvim",
@@ -84,26 +93,10 @@ return require('packer').startup(function(use)
     use("gbprod/yanky.nvim")
     ---------------
     ---------------
-    use { "zbirenbaum/copilot.lua" }
+    ---------------
+    ---------------
+    ---------------
 
-    ---------------
-    ---------------
-    ---------------
-use {
-    "nvim-tree/nvim-tree.lua",
-    requires = "kyazdani42/nvim-web-devicons" ,
-    wants = "nvim-web-devicons",
-    config = function()
-      require("nvim-web-devicons").setup()
-
-      require("nvim-tree").setup {
-        hijack_cursor = true,
-        view = {
-          width = 30
-        }
-      }
-    end
-  }
 
     ---------------
 
