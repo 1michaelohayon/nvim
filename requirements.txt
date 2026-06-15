@@ -1,0 +1,79 @@
+# Legend:
+# @ system software / external command
+# - Neovim plugin
+# * tool installed or managed by a plugin
+# > why it is needed
+
+@ git
+  > installs plugins through vim.pack
+  - gitsigns.nvim
+    > git signs, hunks, blame, diff
+  - telescope.nvim
+    > git_files picker
+
+@ nodejs
+  @ npm
+    > required by Mason for Node-based language servers
+    - mason.nvim
+      * pyright
+        > Python LSP
+      * ts_ls
+        > TypeScript / JavaScript LSP
+      * jsonls
+        > JSON LSP
+      * yamlls
+        > YAML LSP
+
+@ go
+  - mason.nvim
+    * gopls
+      > Go LSP
+
+@ cargo
+  * tree-sitter-cli
+    > Treesitter parser builds
+    @ clang
+    @ libclang-dev
+    @ llvm
+      > native parser build dependencies
+  - blink.cmp
+    > Rust fuzzy matcher fallback when prebuilt binary is unavailable
+
+@ ripgrep
+  - telescope.nvim
+    > live_grep picker
+
+@ fd
+  - telescope.nvim
+    > faster file finding backend
+
+@ fzf
+  > kept because fzf-lua exists in the lockfile
+
+@ unzip
+@ curl
+@ tar
+@ gzip
+  - mason.nvim
+    > package download and extraction support
+
+@ trash-cli
+  - oil.nvim
+    > provides trash-put command if Oil trash mode is enabled
+
+@ nerd-font
+  - mini.icons
+    > file icons
+  - oil.nvim
+    > file explorer icons
+  > custom statusline icons
+
+@ clipboard-provider
+  > needed for unnamedplus clipboard
+  @ xclip
+    > X11 clipboard provider
+  @ wl-clipboard
+    > Wayland clipboard provider
+  @ win32yank.exe
+    > WSL clipboard provider
+

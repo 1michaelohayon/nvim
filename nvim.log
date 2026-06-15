@@ -1,0 +1,184 @@
+
+
+
+n  shn         * <Lua 325: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Highlight next surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  shl         * <Lua 323: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Highlight previous surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sh          * <Lua 270: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Highlight surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sFn         * <Lua 228: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find next left surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sFl         * <Lua 268: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find previous left surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sF          * <Lua 225: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find left surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sfn         * <Lua 272: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find next right surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sfl         * <Lua 230: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find previous right surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sf          * <Lua 297: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find right surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  srn         * <Lua 295: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Replace next surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  srl         * <Lua 293: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Replace previous surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sr          * <Lua 291: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Replace surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sdn         * <Lua 289: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Delete next surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sdl         * <Lua 287: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Delete previous surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sd          * <Lua 262: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Delete surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  s           * <Nop>
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2274
+n  sa          * <Lua 15: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Add surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+
+n  shn         * <Lua 325: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Highlight next surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  shl         * <Lua 323: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Highlight previous surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sh          * <Lua 270: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Highlight surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sFn         * <Lua 228: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find next left surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sFl         * <Lua 268: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find previous left surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sF          * <Lua 225: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find left surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sfn         * <Lua 272: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find next right surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sfl         * <Lua 230: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find previous right surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sf          * <Lua 297: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1285>
+                 Find right surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  srn         * <Lua 295: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Replace next surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  srl         * <Lua 293: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Replace previous surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sr          * <Lua 291: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Replace surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sdn         * <Lua 289: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Delete next surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sdl         * <Lua 287: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Delete previous surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+n  sd          * <Lua 262: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua:1264>
+                 Delete surrounding
+	Last set from ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua line 2272
+  1: ~/.config/nvim/vim/_core/defaults.lua
+  2: /opt/nvim/share/nvim/runtime/lua/vim/tty.lua
+  3: /opt/nvim/share/nvim/runtime/ftplugin.vim
+  4: /opt/nvim/share/nvim/runtime/indent.vim
+  5: ~/.config/nvim/init.lua
+  6: /opt/nvim/share/nvim/runtime/colors/habamax.vim
+  7: /opt/nvim/share/nvim/runtime/colors/vim.lua
+  8: ~/.config/nvim/lua/options.lua
+  9: /opt/nvim/share/nvim/runtime/lua/vim/treesitter/query.lua
+ 10: /opt/nvim/share/nvim/runtime/lua/vim/treesitter/_fold.lua
+ 11: ~/.config/nvim/lua/remap.lua
+ 12: ~/.config/nvim/lua/statusline.lua
+ 13: ~/.config/nvim/lua/autocmds.lua
+ 14: /opt/nvim/share/nvim/runtime/lua/vim/pack.lua
+ 15: ~/.local/share/nvim/site/pack/core/opt/oil.nvim/lua/oil/init.lua
+ 16: ~/.config/nvim/lua/telescopeConfig.lua
+ 17: ~/.local/share/nvim/site/pack/core/opt/neoscroll.nvim/lua/neoscroll/init.lua
+ 18: /opt/nvim/share/nvim/runtime/lua/vim/lsp.lua
+ 19: ~/.local/share/nvim/site/pack/core/opt/mason.nvim/lua/mason/api/command.lua
+ 20: ~/.local/share/nvim/site/pack/core/opt/mason.nvim/lua/mason/init.lua
+ 21: ~/.local/share/nvim/site/pack/core/opt/mason-lspconfig.nvim/lua/mason-lspconfig/api/command.lua
+ 22: /opt/nvim/share/nvim/runtime/lua/vim/diagnostic.lua
+ 23: ~/.config/nvim/lua/troubleConfig.lua
+ 24: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/lib/utils.lua
+ 25: ~/.local/share/nvim/site/pack/core/opt/fzf-lua/autoload/fzf_lua.vim
+ 26: ~/.local/share/nvim/site/pack/core/opt/fzf-lua/lua/fzf-lua/init.lua
+ 27: ~/.config/nvim/lua/plugins.lua
+ 28: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/ai.lua
+ 29: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/comment.lua
+ 30: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/move.lua
+ 31: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/surround.lua
+ 32: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/cursorword.lua
+ 33: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/indentscope.lua
+ 34: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/pairs.lua
+ 35: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/trailspace.lua
+ 36: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/notify.lua
+ 37: ~/.local/share/nvim/site/pack/core/opt/mini.nvim/lua/mini/icons.lua
+ 38: ~/.local/share/nvim/site/pack/core/opt/gitsigns.nvim/lua/gitsigns.lua
+ 39: ~/.local/share/nvim/site/pack/core/opt/gitsigns.nvim/lua/gitsigns/highlight.lua
+ 40: /opt/nvim/share/nvim/runtime/filetype.lua
+ 41: /opt/nvim/share/nvim/runtime/syntax/syntax.vim
+ 42: /opt/nvim/share/nvim/runtime/syntax/synload.vim
+ 43: ~/.local/share/nvim/site/pack/core/opt/LuaSnip/plugin/luasnip.vim
+ 44: ~/.local/share/nvim/site/pack/core/opt/LuaSnip/plugin/luasnip.lua
+ 45: ~/.local/share/nvim/site/pack/core/opt/LuaSnip/lua/luasnip/config.lua
+ 46: ~/.local/share/nvim/site/pack/core/opt/nvim-lspconfig/plugin/lspconfig.lua
+ 47: ~/.local/share/nvim/site/pack/core/opt/fzf-lua/plugin/fzf-lua.lua
+ 48: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/plugin/blink-cmp.lua
+ 49: ~/.local/share/nvim/site/pack/core/opt/lsp-zero.nvim/plugin/lsp-zero.lua
+ 50: ~/.local/share/nvim/site/pack/core/opt/nvim-treesitter/plugin/filetypes.lua
+ 51: ~/.local/share/nvim/site/pack/core/opt/nvim-treesitter/plugin/nvim-treesitter.lua
+ 52: ~/.local/share/nvim/site/pack/core/opt/nvim-treesitter/plugin/query_predicates.lua
+ 53: ~/.local/share/nvim/site/pack/core/opt/gitsigns.nvim/plugin/gitsigns.lua
+ 54: ~/.local/share/nvim/site/pack/core/opt/plenary.nvim/plugin/plenary.vim
+ 55: ~/.local/share/nvim/site/pack/core/opt/telescope.nvim/plugin/telescope.lua
+ 56: /opt/nvim/share/nvim/runtime/plugin/gzip.vim
+ 57: /opt/nvim/share/nvim/runtime/plugin/matchit.vim
+ 58: /opt/nvim/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+ 59: /opt/nvim/share/nvim/runtime/plugin/matchparen.vim
+ 60: /opt/nvim/share/nvim/runtime/plugin/netrwPlugin.vim
+ 61: /opt/nvim/share/nvim/runtime/plugin/rplugin.vim
+ 62: /opt/nvim/share/nvim/runtime/plugin/tarPlugin.vim
+ 63: /opt/nvim/share/nvim/runtime/plugin/tutor.vim
+ 64: /opt/nvim/share/nvim/runtime/plugin/zipPlugin.vim
+ 65: /opt/nvim/share/nvim/runtime/plugin/editorconfig.lua
+ 66: /opt/nvim/share/nvim/runtime/plugin/man.lua
+ 67: /opt/nvim/share/nvim/runtime/plugin/net.lua
+ 68: /opt/nvim/share/nvim/runtime/plugin/osc52.lua
+ 69: /opt/nvim/share/nvim/runtime/plugin/shada.lua
+ 70: /opt/nvim/share/nvim/runtime/plugin/spellfile.lua
+ 71: ~/.local/share/nvim/site/pack/core/opt/LuaSnip/lua/luasnip/loaders/fs_watchers.lua
+ 72: /opt/nvim/share/nvim/runtime/autoload/provider/clipboard.vim
+ 73: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/highlights.lua
+ 74: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/keymap/init.lua
+ 75: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/keymap/apply.lua
+ 76: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/lib/buffer_events.lua
+ 77: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/lib/cmdline_events.lua
+ 78: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/completion/windows/menu.lua
+ 79: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/sources/buffer/recency.lua
+ 80: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/sources/buffer/cache.lua
+ 81: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/fuzzy/init.lua
+ 82: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/lib/window/init.lua
+ 83: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/completion/windows/render/init.lua
+ 84: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/lib/text_edits.lua
+ 85: ~/.local/share/nvim/site/pack/core/opt/blink.cmp/lua/blink/cmp/completion/windows/ghost_text/init.lua
