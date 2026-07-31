@@ -6,7 +6,7 @@ require("treesitterConfig")
 require("lspZeroConfig")
 require("troubleConfig")
 require("blinkConfig")
-require("obsidianConfig")
+require("colorfulWinsepConfig")
 require("mason").setup({})
 -------
 ------- TO SORT ----

@@ -89,6 +89,27 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
+-- open the most recent file when nvim is started with no arguments
+vim.api.nvim_create_autocmd("VimEnter", {
+	group = augroup,
+	desc = "Open last file when nvim is started empty",
+	callback = function()
+		if vim.fn.argc() ~= 0 then -- a file/dir was passed on the command line
+			return
+		end
+		if vim.fn.line2byte("$") ~= -1 then -- something was piped into stdin
+			return
+		end
+
+		for _, file in ipairs(vim.v.oldfiles) do
+			if vim.fn.filereadable(file) == 1 then
+				vim.cmd.edit(vim.fn.fnameescape(file))
+				break
+			end
+		end
+	end,
+})
+
 -- wrap, linebreak and spellcheck on markdown and text files
 vim.api.nvim_create_autocmd("FileType", {
 	group = augroup,
