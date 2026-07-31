@@ -17,6 +17,10 @@
       "rev": "5dc52088c231f2721f545570fcb541b04802ce6b",
       "src": "https://github.com/creativenull/efmls-configs-nvim"
     },
+    "focus.nvim": {
+      "rev": "36ebedeebe82ebea250c9d671769194caa033902",
+      "src": "https://github.com/nvim-focus/focus.nvim"
+    },
     "fzf-lua": {
       "rev": "44816af2465bb0a17ae0f1f2d8a4f9c3df524fcd",
       "src": "https://www.github.com/ibhagwan/fzf-lua"

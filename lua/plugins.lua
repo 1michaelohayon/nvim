@@ -7,6 +7,7 @@ require("lspZeroConfig")
 require("troubleConfig")
 require("blinkConfig")
 require("colorfulWinsepConfig")
+require("focusConfig")
 require("mason").setup({})
 -------
 ------- TO SORT ----

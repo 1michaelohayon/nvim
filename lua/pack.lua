@@ -22,4 +22,5 @@ vim.pack.add({
 	"https://github.com/L3MON4D3/LuaSnip",
   "https://github.com/rebelot/kanagawa.nvim",
   "https://github.com/nvim-zh/colorful-winsep.nvim",
+  "https://github.com/nvim-focus/focus.nvim",
 })
