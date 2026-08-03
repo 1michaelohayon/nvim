@@ -10,8 +10,8 @@ vim.opt.sidescrolloff = 10 -- keep 10 lines to left/right of cursor
 
 vim.opt.tabstop = 2 -- tabwidth
 vim.opt.shiftwidth = 2 -- indent width
-vim.opt.softtabstop = 2 -- soft tab stop not tabs on tab/backspace
-vim.opt.expandtab = true -- use spaces instead of tabs
+vim.opt.softtabstop = 0 -- no soft tab stop, use real tabs
+vim.opt.expandtab = false -- use tabs instead of spaces
 vim.opt.smartindent = true -- smart auto-indent
 vim.opt.autoindent = true -- copy indent from current line
 
