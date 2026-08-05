@@ -74,48 +74,41 @@ local guicursor_rtl = table.concat({
 -- Default to LTR cursor shapes
 vim.o.guicursor = guicursor_ltr
 
-local function enable_hebrew_spell()
-  vim.opt_local.spelllang = { 'he', 'en_us' }
-  -- Disable capitalization check, as Hebrew doesn’t have caps
-  vim.opt_local.spellcapcheck = ''
-  vim.opt_local.spellsuggest = 'best,9'
-end
+-- Session-wide toggle (not per-buffer/per-window), so it stays on across
+-- :edit, buffer switches, Oil, new splits, etc. until pressed again.
+local hebrew_mode_enabled = false
 
-local function enable_english_spell()
-  vim.opt_local.spelllang = { 'en_us' }
-  vim.opt_local.spellcapcheck = vim.api.nvim_get_option_value('spellcapcheck', { scope = 'global' })
-  vim.opt_local.spellsuggest = 'best,9'
+-- Single function applying every option for a given state, so ON and OFF
+-- can never drift out of sync with each other.
+local function set_hebrew_mode(enabled)
+  hebrew_mode_enabled = enabled
+
+  -- 'keymap'/'iminsert'/'imsearch' are local-to-buffer, but setting them
+  -- with vim.opt (not vim.opt_local) also updates the global default that
+  -- every buffer created/entered afterwards inherits.
+  vim.opt.keymap = enabled and 'hebrew' or ''
+  vim.opt.iminsert = enabled and 1 or 0
+  vim.opt.imsearch = enabled and 1 or 0
+  -- 'rightleft' is local-to-window with no such global default, so it's
+  -- reapplied per-window by the autocmd below.
+  vim.opt_local.rightleft = enabled
+
+  vim.o.guicursor = enabled and guicursor_rtl or guicursor_ltr
+
+  vim.notify('Hebrew mode: ' .. (enabled and 'ON' or 'OFF'), vim.log.levels.INFO)
 end
 
 local function ToggleHebrewMode()
-  local heb_mode = vim.b.hebrew_mode_enabled
-
-  if not heb_mode then
-    vim.opt_local.keymap = 'hebrew'
-    vim.opt_local.iminsert = 1
-    vim.opt_local.imsearch = 1
-    vim.opt_local.rightleft = true
-    vim.b.hebrew_mode_enabled = true
-
-    vim.o.guicursor = guicursor_rtl
-
-    --enable_hebrew_spell()
-
-    vim.notify('Hebrew mode: ON', vim.log.levels.INFO)
-  else
-    vim.opt_local.keymap = ''
-    vim.opt_local.iminsert = 0
-    vim.opt_local.imsearch = 0
-    vim.opt_local.rightleft = false
-    vim.b.hebrew_mode_enabled = false
-
-    vim.o.guicursor = guicursor_ltr
-
-    --enable_english_spell()
-
-    vim.notify('Hebrew mode: OFF', vim.log.levels.INFO)
-  end
+  set_hebrew_mode(not hebrew_mode_enabled)
 end
+
+-- Keep 'rightleft' in sync on every window as you navigate, since it has no
+-- global default to inherit the way the buffer-local options above do.
+vim.api.nvim_create_autocmd({ 'BufWinEnter', 'WinEnter' }, {
+  callback = function()
+    vim.opt_local.rightleft = hebrew_mode_enabled
+  end,
+})
 
 -- Expose as a command, just in case
 vim.api.nvim_create_user_command('HebrewToggle', function()
