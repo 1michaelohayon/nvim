@@ -5,7 +5,9 @@ require("statusline")
 require("autocmds")
 require("plugins")
 require("hebrew")
+require("markdown")
 require("remap") -- keep last to not get keys overwritten by plugins
+require("save") -- keep absolute last: <C-s> always wins
 
 setup_dynamic_statusline()
 

@@ -1,3 +1,5 @@
+local hebrew = require("hebrew")
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Oil)
 
@@ -10,18 +12,16 @@ vim.keymap.set("n", "<n>", "<nzzzv")
 vim.keymap.set("n", "<N>", "<Nzzzv")
 
 
--- save
-vim.api.nvim_set_keymap('n', '<c-s>', ':w<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<c-s>', '<c-o>:w<CR>', {noremap = true, silent = true})
-
 -- Hebrew-layout Ctrl equivalents: langmap only translates unmodified keys, not
 -- Ctrl-chords, so under a Hebrew OS keyboard layout <C-s>/<C-w> land on whatever
--- the physical key produces instead. ד and ' are what the physical s/w keys type
--- under the Israeli layout (same pairing as hebrew_langmap_pairs in hebrew.lua).
-vim.api.nvim_set_keymap('n', '<c-\u{5d3}>', ':w<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<c-\u{5d3}>', '<c-o>:w<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<c-'>", '<c-w>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', "<c-'>", '<c-w>', {noremap = true, silent = true})
+-- the physical key produces instead. hebrew.hebrew_equivalent() looks up what
+-- that physical key types under the Israeli layout (hebrew.lua's langmap table).
+local heb_s = hebrew.hebrew_equivalent('s')
+local heb_w = hebrew.hebrew_equivalent('w')
+vim.api.nvim_set_keymap('n', '<c-' .. heb_s .. '>', ':w<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<c-' .. heb_s .. '>', '<c-o>:w<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<c-' .. heb_w .. '>', '<c-w>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<c-' .. heb_w .. '>', '<c-w>', {noremap = true, silent = true})
 
 -- leader + p doesn't overrite the current clipboard
 vim.keymap.set("x", "<leader>p", "\"_dP")
@@ -38,10 +38,9 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- Hebrew-layout equivalents of the two above (ל/ח are what the physical k/j
--- keys type under the Israeli layout, same pairing as hebrew_langmap_pairs).
-vim.keymap.set("n", "<C-\u{5dc}>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-\u{5d7}>", "<cmd>cprev<CR>zz")
+-- Hebrew-layout equivalents of the two above.
+vim.keymap.set("n", "<C-" .. hebrew.hebrew_equivalent('k') .. ">", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-" .. hebrew.hebrew_equivalent('j') .. ">", "<cmd>cprev<CR>zz")
 
 
 vim.keymap.set("n", "Q", "<nop>")

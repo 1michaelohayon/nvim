@@ -98,7 +98,7 @@ local function set_hebrew_mode(enabled)
   vim.notify('Hebrew mode: ' .. (enabled and 'ON' or 'OFF'), vim.log.levels.INFO)
 end
 
-local function ToggleHebrewMode()
+local function toggle_hebrew_mode()
   set_hebrew_mode(not hebrew_mode_enabled)
 end
 
@@ -110,13 +110,31 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter', 'WinEnter' }, {
   end,
 })
 
--- Expose as a command, just in case
+-- Also expose as a command, so it's scriptable/callable outside the keymap.
 vim.api.nvim_create_user_command('HebrewToggle', function()
-  ToggleHebrewMode()
+  toggle_hebrew_mode()
 end, {})
 
 -- And as a keymap
 vim.keymap.set({ 'n', 'i' }, '<C-Space>', function()
   vim.cmd.HebrewToggle()
 end, { silent = true, desc = 'Toggle Hebrew mode' })
+
+-- Public: what physical-key correspondence does `latin_char` have under the
+-- Israeli layout? e.g. hebrew_equivalent('s') -> 'ד'. Used by other files
+-- (markdown.lua, remap.lua) to build Hebrew-layout Ctrl-chord aliases
+-- without duplicating hebrew_langmap_pairs — see their "Hebrew-layout
+-- equivalents" comments for why those aliases are needed.
+local function hebrew_equivalent(latin_char)
+  for _, pair in ipairs(hebrew_langmap_pairs) do
+    if pair[2] == latin_char then
+      return pair[1]
+    end
+  end
+  return nil
+end
+
+return {
+  hebrew_equivalent = hebrew_equivalent,
+}
 
