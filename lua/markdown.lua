@@ -12,6 +12,12 @@
 -- Ctrl-chords (see the "Hebrew-layout" section below). <C-Right>/<C-Left>/
 -- <CR> need no equivalent: they're not character keys, so the OS keyboard
 -- layout can't affect them.
+--
+-- On every save (:w, <C-s>, whatever), each checklist block auto-sorts:
+-- unchecked items stay on top, checked items sink to the bottom, and items
+-- checked since the last save land at the top of that checked group (ahead
+-- of ones already checked before). A checked item's child block travels
+-- with it as a unit and is sorted independently within itself.
 -- ============================================================================
 
 local hebrew = require("hebrew")
@@ -98,6 +104,134 @@ local function toggle_list_type(start_line, end_line)
     vim.fn.setline(l, render_list_line(indent, target, tostring(n), checked, content))
     n = n + 1
   end
+end
+
+-- ----------------------------------------------------------------------------
+-- Checklist auto-sort on save. Within a maximal run of consecutive checkbox
+-- lines sharing the same indent (a "block"), unchecked items keep their
+-- existing relative order on top; checked items sink below them, with items
+-- checked since the last save/load placed ahead of ones already checked
+-- before (order among several checked in the same save doesn't matter). A
+-- blank line or non-checkbox line ends a block — it's a boundary, not
+-- something to sort across. Recurses into each item's more-deeply-indented
+-- attached content first, so a nested block is sorted independently before
+-- its parent item gets moved as a unit.
+-- ----------------------------------------------------------------------------
+
+-- Per-buffer memory of which items were checked as of the last save/load, so
+-- a freshly-checked item can be told apart from one checked a while ago.
+-- Keyed by bufnr; plain Lua table, so it resets with the session — that's
+-- fine, "since last save" only needs to mean something within one sitting.
+local checked_snapshots = {}
+
+local function item_key(indent, content)
+  return indent .. '\0' .. content
+end
+
+local function build_snapshot(lines)
+  local snapshot = {}
+  for _, line in ipairs(lines) do
+    local indent, _, _, checked, content = parse_list_line(line)
+    if checked ~= nil and checked ~= ' ' then
+      snapshot[item_key(indent, content)] = true
+    end
+  end
+  return snapshot
+end
+
+-- Collects one block of sibling checklist items starting at start_idx: each
+-- item is its own line plus every more-deeply-indented line right after it
+-- (its attached content). Stops at end_idx, a dedent, or a non-checkbox
+-- line. Returns the items and the index of the first line after the block.
+local function scan_checklist_block(lines, start_idx, end_idx)
+  local first_indent = lines[start_idx]:match('^(%s*)')
+  local items = {}
+  local i = start_idx
+  while i <= end_idx do
+    local indent = lines[i]:match('^(%s*)')
+    if indent ~= first_indent then
+      break
+    end
+    local _, _, _, checked, content = parse_list_line(lines[i])
+    if checked == nil then
+      break
+    end
+    local item_start = i
+    local item_end = i
+    i = i + 1
+    while i <= end_idx do
+      local next_indent = lines[i]:match('^(%s*)')
+      if #next_indent > #first_indent then
+        item_end = i
+        i = i + 1
+      else
+        break
+      end
+    end
+    table.insert(items, {
+      start_idx = item_start,
+      end_idx = item_end,
+      checked = checked,
+      key = item_key(first_indent, content),
+    })
+  end
+  return items, i
+end
+
+-- Recursively sorts every checklist block within [start_idx, end_idx],
+-- returning the resulting lines for that range.
+local function sort_checklist_range(lines, start_idx, end_idx, was_checked)
+  local result = {}
+  local i = start_idx
+  while i <= end_idx do
+    local _, _, _, checked = parse_list_line(lines[i])
+    if checked == nil then
+      table.insert(result, lines[i])
+      i = i + 1
+    else
+      local items, next_idx = scan_checklist_block(lines, i, end_idx)
+
+      for _, item in ipairs(items) do
+        item.lines = { lines[item.start_idx] }
+        if item.end_idx > item.start_idx then
+          local inner = sort_checklist_range(lines, item.start_idx + 1, item.end_idx, was_checked)
+          for _, l in ipairs(inner) do
+            table.insert(item.lines, l)
+          end
+        end
+      end
+
+      local unchecked, new_checked, old_checked = {}, {}, {}
+      for _, item in ipairs(items) do
+        if item.checked == ' ' then
+          table.insert(unchecked, item)
+        elseif was_checked[item.key] then
+          table.insert(old_checked, item)
+        else
+          table.insert(new_checked, item)
+        end
+      end
+
+      for _, group in ipairs({ unchecked, new_checked, old_checked }) do
+        for _, item in ipairs(group) do
+          for _, l in ipairs(item.lines) do
+            table.insert(result, l)
+          end
+        end
+      end
+
+      i = next_idx
+    end
+  end
+  return result
+end
+
+local function sort_checklists(bufnr)
+  local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+  local was_checked = checked_snapshots[bufnr] or {}
+  local new_lines = sort_checklist_range(lines, 1, #lines, was_checked)
+  vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, new_lines)
+  checked_snapshots[bufnr] = build_snapshot(new_lines)
 end
 
 -- ----------------------------------------------------------------------------
@@ -263,6 +397,18 @@ local function setup_enter_keymap(opts)
   })
 end
 
+local function setup_checklist_sort(buf)
+  -- Baseline "as of now" snapshot, so the first save right after opening
+  -- the file doesn't treat every pre-existing checked item as newly checked.
+  checked_snapshots[buf] = build_snapshot(vim.api.nvim_buf_get_lines(buf, 0, -1, false))
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    buffer = buf,
+    callback = function()
+      sort_checklists(buf)
+    end,
+  })
+end
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
   callback = function(args)
@@ -271,5 +417,6 @@ vim.api.nvim_create_autocmd('FileType', {
     setup_indent_keymaps(opts)
     setup_list_type_keymaps(opts)
     setup_enter_keymap(opts)
+    setup_checklist_sort(args.buf)
   end,
 })
