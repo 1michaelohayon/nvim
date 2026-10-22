@@ -1,8 +1,8 @@
 -- ============================================================================
 -- OPTIONS
 -- ============================================================================
-vim.opt.number = true -- line number
-vim.opt.relativenumber = true -- relative line numbers
+vim.opt.number = false -- line number
+vim.opt.relativenumber = false -- relative line numbers
 vim.opt.cursorline = false -- highlight current line
 vim.opt.wrap = false -- do not wrap lines by default
 vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
